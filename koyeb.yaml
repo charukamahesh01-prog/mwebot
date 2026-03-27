@@ -1,0 +1,20 @@
+# Koyeb Deployment Configuration
+
+# Koyeb YAML configuration file
+version: '1.0'
+description: 'Deployment configuration for mwebot'
+
+services:
+  web:
+    image: 'charukamahesh01-prog/mwebot:latest'
+    deploy:
+      build:
+        context: .
+        dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    ports:
+      - '3000:3000'
+
+# Place additional configuration options as required
